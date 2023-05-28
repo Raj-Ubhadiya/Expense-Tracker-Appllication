@@ -16,7 +16,8 @@
 .homeLink,
 .addExpenseLink,
 .profileLink,
-.analyseLink {
+.analyseLink,
+.transactionLink {
   display: grid;
   place-items: center;
 }
@@ -173,17 +174,27 @@
 .row-4 {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   margin: 0.2rem;
   padding: 0.7rem;
-  gap: 13rem;
+  /* gap: 13rem; */
+
   width: 90%;
   height: 1.5rem;
   font-size: large;
   border-radius: 2rem;
   overflow: auto;
   border: 2px solid rgb(0, 0, 0);
+}
+
+.col-1,
+.col-2,
+.col-3,
+.col-4 {
+  /* border: 2px solid black; */
+  width: 10rem;
+  text-align: center;
 }
 
 .incrementActivity .incrementActivityButton {
@@ -296,7 +307,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 2.5rem;
+  gap: 1rem;
   background-color: rgb(44, 104, 104);
 }
 
@@ -308,23 +319,46 @@
   border: 2px solid red;
   color: black;
 }
+
 .adduserinfoform {
   width: 80%;
-  height: 20rem;
+  height: 26rem;
   display: flex;
   flex-wrap: wrap;
-  /* flex-direction: column; */
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* gap:8em; */
-  padding: 2rem;
+  /* padding: 2rem; */
   background-color: rgb(106, 110, 119);
   border: 2px solid black;
 }
 
+.formupperpart {
+  width: 80%;
+  height: 20rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  overflow: auto;
+  gap: 4rem;
+}
+
+.userinputs {
+  width: 60%;
+  height: 15rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  margin: auto;
+  /* border: 2px solid black; */
+}
+
 .userinputs input {
   margin: 0.5em;
-  width: 25.5rem;
+  width: 25rem;
   height: 2.5rem;
   border-radius: 2rem;
   color: black;
@@ -334,39 +368,54 @@
 
 .imageinput {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column-reverse;
   justify-content: center;
+  align-items: center;
+  padding: 2em;
 }
 
-.imageinput button {
-  height: 2rem;
-  width: 6rem;
-  margin-left: 20rem;
-  margin-top: 2rem;
-}
 .imageinput img {
-  width: 11rem;
-  height: 11rem;
-  margin-left: 20rem;
+  width: 12rem;
+  height: 12rem;
+  margin-top: -1rem;
   border: 2px solid red;
-  border-radius: 1.5rem;
+  border-radius: 1rem;
   color: black;
+  z-index: 1;
   background-color: rgb(44, 104, 104);
 }
 
-.submitButton button {
-  width: 5rem;
+.imageinput span {
+  display: grid;
+  place-items: center;
+  width: 2rem;
   height: 2rem;
-  margin-top: 2rem;
+  z-index: 2;
+  color: aqua;
   border: 2px solid red;
-  border-radius: 2rem;
-  color: black;
-  background-color: rgb(44, 104, 104);
+  border-radius: 50%;
+  background-color: black;
+}
+/* 
+.imageinput button :before :hover {
+  opacity: 1;
 }
 
+.imageinput button:after :hover {
+  opacity: 2;
+} */
 .AnalysePage {
-  width: 100vw;
-  height: 100vh;
-  background-color: chocolate;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  /* background-color: chocolate; */
+}
+
+.Analyseheader{
+  border: 2px solid red;
 }

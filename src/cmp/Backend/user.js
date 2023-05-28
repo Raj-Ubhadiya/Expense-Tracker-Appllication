@@ -16,7 +16,7 @@ var userInfoSchema = mongoose.Schema(
 );
 
 var userInfo = mongoose.model("userInfo", userInfoSchema);
-
+//expense Schema
 var expenseSchema = mongoose.Schema(
   {
     username: String,

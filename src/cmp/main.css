@@ -1,0 +1,217 @@
+.Sidebar {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 1rem sold rgb(83, 142, 1);
+}
+
+.Sidebar .Navbar {
+  margin: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.homeLink,
+.addExpenseLink,
+.profileLink,
+.analyseLink {
+  display: grid;
+  place-items: center;
+}
+
+.Navbar .home-img,
+.addExp-img,
+.profile-img,
+.analyse-img {
+  width: 3rem;
+  height: 3rem;
+  border: 5px solid rgb(11, 24, 109);
+  border-radius: 0 40% 40% 0;
+  margin-top: 4rem;
+}
+.Navbar a {
+  text-decoration: solid;
+  color: black;
+}
+
+.HomePage {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.HomePage .Home-header {
+  width: 70rem;
+  height: 17rem;
+  padding: 1rem;
+  margin-top: 0.5em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 2rem;
+  overflow: hidden;
+  border: 2px solid black;
+  background-color: aqua;
+}
+
+.Home-header-title {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  /* gap: 0.5rem; */
+}
+
+.leftheader {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40rem;
+  height: 16rem;
+  /* margin-top: -1rem; */
+  border-radius: 1rem;
+  /* border: 2px solid red; */
+}
+.upperofleft {
+  width: 80%;
+  height: 60%;
+  text-align: left;
+  border-radius: 1rem;
+  border: 2px solid black;
+}
+.footerofleft {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  height: 40%;
+  gap: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  /* overflow: scroll; */
+  /* border: 2px solid black; */
+}
+.btn-1,
+.btn-2 {
+  font-size: large;
+  overflow: hidden;
+  width: 40%;
+  height: 100%;
+  border-radius: 1rem;
+  border: 2px solid red;
+}
+
+.b1-p1,
+.b2-p1 {
+  margin: 0.5rem;
+  text-align: left;
+}
+
+.b1-p2,
+.b2-p2 {
+  margin: 0.5rem;
+  text-align: right;
+}
+
+.rightheader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 15rem;
+  height: 15rem;
+  margin-left: 8rem;
+  border-radius: 60%;
+  overflow: auto;
+  border: 2px solid rgb(60, 0, 255);
+}
+
+.HomePage .Home-Recent-Activity {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  height: 50%;
+  /* margin: 1em; */
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  overflow: hidden;
+  border-radius: 2rem;
+  border: 2px solid black;
+  background-color: aqua;
+}
+.Recnet-activity-header {
+  width: 90%;
+  text-align: left;
+  border-radius: 1.5rem;
+  /* border: 2px solid rgb(0, 0, 0); */
+}
+.display-activities {
+  width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+  /* flex-direction: ; */
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+  border-radius: 2rem;
+  z-index: 1;
+  /* border:0.2em solid red; */
+}
+.row-1,
+.row-2,
+.row-3,
+.row-4 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 0.2rem;
+  padding: 0.7rem;
+  gap: 13rem;
+  width: 90%;
+  height: 1.5rem;
+  font-size: large;
+  border-radius: 2rem;
+  overflow: auto;
+  border: 2px solid rgb(0, 0, 0);
+}
+
+.incrementActivity .incrementActivityButton{
+  width: 3rem;
+  height: 3rem;
+  z-index: 2;
+  border: 1px solid red;
+  border-radius: 50%;
+  font-size: larger;
+  margin-top: 14rem;
+  margin-bottom:1em;
+  margin-left: -2rem;
+  color: aqua;
+  background-color: black;
+}
+.AddExpensePage {
+  width: 100vw;
+  height: 100vh;
+  background-color: aqua;
+}
+
+.ProfilePage {
+  width: 100vw;
+  height: 100vh;
+  background-color: blue;
+}
+
+.AnalysePage {
+  width: 100vw;
+  height: 100vh;
+  background-color: chocolate;
+}

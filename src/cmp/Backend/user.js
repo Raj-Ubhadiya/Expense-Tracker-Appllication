@@ -1,4 +1,5 @@
 const { default: mongoose } = require("mongoose");
+// User Schema
 
 var userInfoSchema = mongoose.Schema(
   {

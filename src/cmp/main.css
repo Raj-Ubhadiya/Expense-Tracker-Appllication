@@ -24,12 +24,13 @@
 .Navbar .home-img,
 .addExp-img,
 .profile-img,
-.analyse-img {
+.analyse-img,
+.transaction-img {
   width: 3rem;
   height: 3rem;
   border: 5px solid rgb(11, 24, 109);
   border-radius: 0 40% 40% 0;
-  margin-top: 4rem;
+  margin-top: 2rem;
 }
 .Navbar a {
   text-decoration: solid;
@@ -185,7 +186,7 @@
   border: 2px solid rgb(0, 0, 0);
 }
 
-.incrementActivity .incrementActivityButton{
+.incrementActivity .incrementActivityButton {
   width: 3rem;
   height: 3rem;
   z-index: 2;
@@ -193,21 +194,175 @@
   border-radius: 50%;
   font-size: larger;
   margin-top: 14rem;
-  margin-bottom:1em;
+  margin-bottom: 1em;
   margin-left: -2rem;
   color: aqua;
   background-color: black;
 }
+
+/* css of ADD expense page */
+
 .AddExpensePage {
-  width: 100vw;
-  height: 100vh;
-  background-color: aqua;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  background-color: rgb(44, 104, 104);
+}
+
+.AddExpenseheader h2 {
+  margin-top: 3rem;
+  padding: 1rem;
+  border-radius: 2rem;
+  background-color: rgb(106, 110, 119);
+  border: 2px solid red;
+  color: black;
+}
+.addexpenseform {
+  width: 80%;
+  height: 40%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1.7rem;
+  padding: 2rem;
+  background-color: rgb(106, 110, 119);
+  border: 2px solid black;
+}
+
+.addexpenseform input {
+  width: 25rem;
+  height: 2rem;
+  border-radius: 2rem;
+  color: black;
+  background-color: rgb(44, 104, 104);
+  border: 2px solid red;
+}
+.addexpenseform select {
+  width: 25.5rem;
+  height: 2.5rem;
+  border-radius: 2rem;
+  color: black;
+  background-color: rgb(44, 104, 104);
+  border: 2px solid red;
+}
+.remarkinput textarea {
+  text-align: left;
+  height: 5rem;
+  width: 40rem;
+  margin-left: 7.3rem;
+  margin-right: 20rem;
+  border: 2px solid red;
+  border-radius: 1.5rem;
+  color: black;
+  background-color: rgb(44, 104, 104);
+}
+
+.submitButton button {
+  width: 5rem;
+  height: 2rem;
+  border: 2px solid red;
+  border-radius: 2rem;
+  color: black;
+  background-color: rgb(44, 104, 104);
+}
+
+.newaddexpensebutton button {
+  width: 3rem;
+  height: 3rem;
+  margin-left: 71rem;
+  font-size: x-large;
+  border-radius: 50%;
+  color: black;
+  background-color: rgb(44, 104, 104);
 }
 
 .ProfilePage {
   width: 100vw;
   height: 100vh;
-  background-color: blue;
+  /* background-color: blue; */
+}
+
+.profilepage {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2.5rem;
+  background-color: rgb(44, 104, 104);
+}
+
+.profileheader h2 {
+  margin-top: 3rem;
+  padding: 1rem;
+  border-radius: 2rem;
+  background-color: rgb(106, 110, 119);
+  border: 2px solid red;
+  color: black;
+}
+.adduserinfoform {
+  width: 80%;
+  height: 20rem;
+  display: flex;
+  flex-wrap: wrap;
+  /* flex-direction: column; */
+  justify-content: center;
+  align-items: center;
+  /* gap:8em; */
+  padding: 2rem;
+  background-color: rgb(106, 110, 119);
+  border: 2px solid black;
+}
+
+.userinputs input {
+  margin: 0.5em;
+  width: 25.5rem;
+  height: 2.5rem;
+  border-radius: 2rem;
+  color: black;
+  background-color: rgb(44, 104, 104);
+  border: 2px solid red;
+}
+
+.imageinput {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.imageinput button {
+  height: 2rem;
+  width: 6rem;
+  margin-left: 20rem;
+  margin-top: 2rem;
+}
+.imageinput img {
+  width: 11rem;
+  height: 11rem;
+  margin-left: 20rem;
+  border: 2px solid red;
+  border-radius: 1.5rem;
+  color: black;
+  background-color: rgb(44, 104, 104);
+}
+
+.submitButton button {
+  width: 5rem;
+  height: 2rem;
+  margin-top: 2rem;
+  border: 2px solid red;
+  border-radius: 2rem;
+  color: black;
+  background-color: rgb(44, 104, 104);
 }
 
 .AnalysePage {

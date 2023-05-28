@@ -5,12 +5,14 @@ var app = express();
 app.use(cors());
 app.use(express.json());
 
+var Joi = require("joi");
+
 // Backend
 var bcrypt = require("bcrypt");
 var jwt = require("jsonwebtoken");
 jwt_secret = "fg5f1454g5f4v3s4f43s3hvs4hvf14sds";
 
-app.listen(8080, (err) => {
+app.listen(process.env.PORT || 5000, (err) => {
   if (err) {
     console.log(err);
   } else {
@@ -56,6 +58,22 @@ app.get("/api/getExpenseDetail", async (req, res) => {
 app.post("/api/addExpense", async (req, res) => {
   const { username, time, month, title, amount, mode, category, remark } =
     req.body;
+
+  const schema = {
+    username: Joi.string().min(4).required(),
+    month: Joi.string().min(2).required(),
+    title: Joi.string().min(4).required(),
+    amount: Joi.number().min(2).required(),
+    mode: Joi.string().min(2).required(),
+    category: Joi.string().min(2).required(),
+  };
+  const joiResult = Joi.valid(req.body, schema);
+  console.log(joiResult);
+  // if (joiResult.error) {
+  //   res.status(400).send(joiResult.error);
+  //   return;
+  // }
+
   var newExpense = await expenseInfo.create({
     time,
     month,

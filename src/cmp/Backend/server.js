@@ -48,9 +48,17 @@ app.get("/api/getUserInfo", async (req, res) => {
   var user = await userInfo.find({});
   return res.json({ data: user });
 });
+app.get("/getuserInfoDemo", async (req, res) => {
+  var user = await userInfo.find({});
+  return res.json({ data: user });
+});
 
 var expenseInfo = mongoose.model("expenseInfo");
 app.get("/api/getExpenseDetail", async (req, res) => {
+  var expense = await expenseInfo.find({});
+  return res.json({ data: expense });
+});
+app.get("/getExpenseDetailDemo", async (req, res) => {
   var expense = await expenseInfo.find({});
   return res.json({ data: expense });
 });

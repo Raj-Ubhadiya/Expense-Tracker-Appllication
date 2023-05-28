@@ -10,27 +10,28 @@ import Home from "./cmp/Home";
 import AddExpense from "./cmp/AddExpense";
 import Profile from "./cmp/Profile";
 import Analyse from "./cmp/Analyse";
+import Transaction from "./cmp/Transaction";
 // import { Profiler } from "react";
 
 function App() {
   return (
-  
-      <div className="mainClass">
-        <Router>
-          <div className="sidebar ">
-            <Sidebar />
-          </div>
+    <div className="mainClass">
+      <Router>
+        <div className="sidebar ">
+          <Sidebar />
+        </div>
 
-          <div className="mainContainer border">
-            <Routes>
-              <Route path="/" exact element={<Home />} />
-              <Route path="/addExpense" element={<AddExpense />} />
-              <Route path="/profile" element={<Profile />} />
-              <Route path="/analyse" element={<Analyse />} />
-            </Routes>
-          </div>
-        </Router>
-      </div>
+        <div className="mainContainer border">
+          <Routes>
+            <Route path="/" exact element={<Home />} />
+            <Route path="/addExpense" element={<AddExpense />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/analyse" element={<Analyse />} />
+            <Route path="/transaction" element={<Transaction />} />
+          </Routes>
+        </div>
+      </Router>
+    </div>
   );
 }
 

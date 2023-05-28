@@ -14,6 +14,7 @@ function Sidebar() {
           <div className="addExp-img"></div>
           <Link to="addExpense">AddExpense</Link>
         </div>
+
         <div className="transactionLink">
           <div className="transaction-img"></div>
           <Link to="transaction">Transaction</Link>

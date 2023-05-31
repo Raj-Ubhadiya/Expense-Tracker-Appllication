@@ -48,16 +48,47 @@ app.get("/api/getUserInfo", async (req, res) => {
   var user = await userInfo.find({});
   return res.json({ data: user });
 });
-app.get("/getuserInfoDemo", async (req, res) => {
-  var user = await userInfo.find({});
-  return res.json({ data: user });
-});
 
 var expenseInfo = mongoose.model("expenseInfo");
 app.get("/api/getExpenseDetail", async (req, res) => {
   var expense = await expenseInfo.find({});
   return res.json({ data: expense });
 });
+
+//Demo APIs
+app.get("/getuserInfoDemo", async (req, res) => {
+  var user = await userInfo.find({});
+  return res.json({ data: user });
+});
+
+app.get("/getExpenseDetailDemo", async (req, res) => {
+  var expense = await expenseInfo.find({}).sort({ date: -1 }).exec();
+  return res.json({ data: expense });
+});
+
+app.post("/addExpenseDemo", async (req, res) => {
+  const { username, date, time, month, title, amount, mode, category, remark } =
+    req.body;
+
+  var newExpense = await expenseInfo.create({
+    date,
+    time,
+    month,
+    username,
+    title,
+    amount,
+    mode,
+    category,
+    remark,
+  });
+  res.json({ status: "New Expense Added" });
+});
+
+app.get("/getuserInfoDemo", async (req, res) => {
+  var user = await userInfo.find({});
+  return res.json({ data: user });
+});
+
 app.get("/getExpenseDetailDemo", async (req, res) => {
   var expense = await expenseInfo.find({});
   return res.json({ data: expense });
@@ -132,4 +163,51 @@ app.post("/createUser", async (req, res) => {
     avtarPath,
   });
   res.json({ status: "User Created" });
+});
+
+app.put("/createUserDemo", async (req, res) => {
+  const { username, password, cashAvailable, balanceAvailable, avtarPath } =
+    req.body;
+  var user = await userInfo.findOne({ username });
+  if (user) {
+    res.json({ status: "User Exists" });
+  }
+  var token = jwt.sign({ username }, jwt_secret);
+  var hashedpassword = await bcrypt.hash(password, 15);
+  var newUser = await userInfo.create({
+    username,
+    password: hashedpassword,
+    sec_token: token,
+    cashAvailable,
+    balanceAvailable,
+    avtarPath,
+  });
+  res.json({ status: "User Created" });
+});
+
+app.put("/updateUserDemo", (req, res) => {
+  const username = req.body.username;
+  const updatedProfile = req.body;
+
+  userInfo
+    .findOneAndUpdate({ username }, updatedProfile)
+    .then(() => res.send("User profile updated successfully."))
+    .catch((err) => {
+      console.error("Failed to update user profile:", err);
+      res.status(500).send("An error occurred while updating user profile.");
+    });
+});
+
+app.put("/updateUserDemo", (req, res) => {
+  const username = req.body.username;
+  const updatedProfile = req.body;
+  console.log(updatedProfile + username);
+
+  userInfo
+    .findOneAndUpdate({ username }, updatedProfile)
+    .then(() => res.send("User profile updated successfully."))
+    .catch((err) => {
+      console.error("Failed to update user profile:", err);
+      res.status(500).send("An error occurred while updating user profile.");
+    });
 });

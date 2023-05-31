@@ -8,6 +8,7 @@ var userInfoSchema = mongoose.Schema(
     username: String,
     password: String,
     sec_token: String,
+    avgExpenseLimit: String,
     cashAvailable: String,
     balanceAvailable: String,
     avatarPath: String,
@@ -22,6 +23,7 @@ var userInfo = mongoose.model("userInfo", userInfoSchema);
 var expenseSchema = mongoose.Schema(
   {
     username: String,
+    date: String,
     time: String,
     title: String,
     amount: Number,

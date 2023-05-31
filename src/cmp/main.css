@@ -459,3 +459,7 @@
 .transactionList::-webkit-scrollbar {
   display: none; /* Chrome, Safari, and Opera */
 }
+
+.date {
+  width: 20rem;
+}

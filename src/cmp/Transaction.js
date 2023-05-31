@@ -39,7 +39,7 @@ const Transaction = () => {
       <div className="transactionList border">
         {expenseData.map((exp) => (
           <div className="transactionRow border" key={exp._id}>
-            <div className="col ">{exp.date}</div>
+            <div className="col date">{exp.date}</div>
             <div className="col ">{exp.title}</div>
             <div className="col ">{exp.amount}</div>
             <div className="col ">{exp.mode}</div>

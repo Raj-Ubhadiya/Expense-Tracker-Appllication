@@ -201,10 +201,10 @@
   border: 2px solid black;
 }
 
-.col-1,
-.col-2,
-.col-3,
-.col-4 {
+.col,
+.col,
+.col,
+.col {
   /* border: 2px solid black; */
   width: 10rem;
   text-align: center;

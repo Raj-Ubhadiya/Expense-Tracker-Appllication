@@ -183,6 +183,8 @@
   gap: 1rem;
   /* gap: 13rem; */
 
+  /* gap: 13rem; */
+
   width: 90%;
   height: 1.5rem;
   font-size: large;
@@ -205,6 +207,10 @@
 .col,
 .col,
 .col {
+.col-1,
+.col-2,
+.col-3,
+.col-4 {
   /* border: 2px solid black; */
   width: 10rem;
   text-align: center;
@@ -480,6 +486,9 @@
 .imageofcard img {
   width: 5rem;
   height: 5em;
+.imageofcard img {
+  width: 5rem;
+  height: 5em;
 }
 .Analysebutton {
   width: 100%;
@@ -488,6 +497,15 @@
   justify-content: flex-end;
   align-items: center;
 }
+.Analysebutton button {
+  width: 3rem;
+  height: 3rem;
+  margin-right: 2rem;
+  border: 2px solid blue;
+  background-color: black;
+  border-radius: 50%;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  color: aqua;
 .Analysebutton button {
   width: 3rem;
   height: 3rem;

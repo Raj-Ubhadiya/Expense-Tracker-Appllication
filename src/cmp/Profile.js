@@ -33,47 +33,25 @@ function Profile() {
         <h2>Profile</h2>
       </div>
       <div className="adduserinfoform">
-        <div className="userinputs">
-          <div className="titleinput">
-            <input
-              type="text"
-              placeholder="Title"
-              onChange={(e) => {
-                setUsername(e.target.value);
-              }}
-            />
+        <div className="formupperpart">
+          <div className="userinputs">
+            <div className="titleinput">
+              <input type="text" placeholder="Title" />
+            </div>
+            <div className="dailylimitinput">
+              <input type="text" placeholder="dailyamount" />
+            </div>
+            <div className="Availablecashinput">
+              <input type="text" placeholder="availablecash" />
+            </div>
+            <div className="avilablebalanceinput">
+              <input type="text" placeholder="availablebalance" />
+            </div>
           </div>
-          <div className="dailylimitinput">
-            <input
-              type="text"
-              placeholder="dailyamount"
-              onChange={(e) => {
-                setavgExpenseLimit(e.target.value);
-              }}
-            />
+          <div className="imageinput">
+            <img className="profileimage" src="download.jpeg" alt="" />
+            <span>/</span>
           </div>
-          <div className="Availablecashinput">
-            <input
-              type="text"
-              placeholder="availablecash"
-              onChange={(e) => {
-                setcashAvailable(e.target.value);
-              }}
-            />
-          </div>
-          <div className="avilablebalanceinput">
-            <input
-              type="text"
-              placeholder="availablebalance"
-              onChange={(e) => {
-                setbalanceAvailable(e.target.value);
-              }}
-            />
-          </div>
-        </div>
-        <div className="imageinput">
-          <img className="profileimage" src="download.jpeg" alt="" />
-          <button type="submit">Change</button>
         </div>
         <div className="submitButton">
           <button type="submit" onClick={submitHandler}>

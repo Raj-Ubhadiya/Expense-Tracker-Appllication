@@ -1,0 +1,12 @@
+[{
+  "_id": {
+    "$oid": "6471dafc0e731a653bef6d64"
+  },
+  "username": "test1",
+  "password": "aashu",
+  "sec_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3QxIiwiaWF0IjoxNjg1MTgzMjI2fQ.kyQf0nAsDeU7s0Si4xMYdSrI1qVFH5yv0nbzfnBm4r4",
+  "cashAvailable": "1234",
+  "balanceAvailable": "1234",
+  "__v": 0,
+  "avgExpenseLimit": "1234"
+}]

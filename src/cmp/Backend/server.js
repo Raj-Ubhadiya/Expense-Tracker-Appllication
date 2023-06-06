@@ -13,7 +13,7 @@ var jwt = require("jsonwebtoken");
 jwt_secret = "fg5f1454g5f4v3s4f43s3hvs4hvf14sds";
 
 app.listen(process.env.PORT || 5000, (err) => {
-  if(err) {
+  if (err) {
     console.log(err);
   } else {
     console.log("Server Started");

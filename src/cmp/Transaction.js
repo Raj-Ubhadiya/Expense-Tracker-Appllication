@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-
+import "./main.css";
 const Transaction = () => {
   const [expenseData, setExpenseData] = useState([]);
   useEffect(() => {

@@ -21,6 +21,7 @@
   overflow: hidden;
 }
 .mainContainer {
+  position: relative;
   width: 90vw;
   height: 90vh;
   overflow: hidden;

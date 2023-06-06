@@ -6,9 +6,13 @@ function Sidebar() {
   return (
     <div className="Sidebar">
       <nav className="Navbar">
+        <div className="TitleLink">
+          <div className="title-img"></div>
+          <Link to="/">Title</Link>
+        </div>
         <div className="homeLink">
           <div className="home-img"></div>
-          <Link to="/">Home</Link>
+          <Link to="home">Home</Link>
         </div>
         <div className="addExpenseLink">
           <div className="addExp-img"></div>

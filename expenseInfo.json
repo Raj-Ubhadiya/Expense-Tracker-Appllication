@@ -1,0 +1,212 @@
+[{
+  "_id": {
+    "$oid": "647195e57b7dbfba0170075f"
+  },
+  "time": "time",
+  "month": "month",
+  "title": "nasto",
+  "mode": "cash",
+  "category": "Breakfast",
+  "amount": 100,
+  "remark": "For me, kinjal and Ubhadiya"
+},{
+  "_id": {
+    "$oid": "6471a1d7c719985f99900196"
+  },
+  "time": "time",
+  "title": "Rajwadi",
+  "amount": 90,
+  "mode": "Cash",
+  "category": "Lunch",
+  "remark": "Fixed thali for Adi",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6471a1e53d9655e081f47162"
+  },
+  "time": "time",
+  "title": "Rajwadi",
+  "amount": 90,
+  "mode": "Cash",
+  "category": "Lunch",
+  "remark": "Fixed thali for Adi",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6471a1f712d12a8013923270"
+  },
+  "time": "time",
+  "title": "Rajwadi",
+  "amount": 90,
+  "mode": "Cash",
+  "category": "Lunch",
+  "remark": "Fixed thali for Adi",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6471a2da2189b4e1b015ae70"
+  },
+  "time": "time",
+  "title": "Tea",
+  "amount": 20,
+  "mode": "Cash",
+  "category": "Breakfast",
+  "remark": "Dada pase thi 2 chai for me and divyesh",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6471e1ac8ad419eee74b8bbd"
+  },
+  "username": "test1",
+  "time": "time",
+  "title": "checking",
+  "amount": 578,
+  "mode": "cash",
+  "category": "Breakfast",
+  "remark": "good",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "647345195081a4e85b843779"
+  },
+  "username": "test1",
+  "time": "time",
+  "title": "checking",
+  "amount": 578,
+  "mode": "cash",
+  "category": "Breakfast",
+  "remark": "good",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6473456d769fb2d429841744"
+  },
+  "username": "test1",
+  "time": "time",
+  "title": "checking",
+  "amount": 578,
+  "mode": "cash",
+  "category": "Breakfast",
+  "remark": "good",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "64734648a5629abd7593f248"
+  },
+  "username": "test1",
+  "time": "time",
+  "title": "checking",
+  "amount": 578,
+  "mode": "cash",
+  "category": "Breakfast",
+  "remark": "good",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "64734659a5629abd7593f24b"
+  },
+  "username": "test1",
+  "time": "time",
+  "title": "checking",
+  "amount": 578,
+  "mode": "cash",
+  "category": "Breakfast",
+  "remark": "good",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "647346d2a5629abd7593f24e"
+  },
+  "username": "test1",
+  "time": "time",
+  "title": "checking",
+  "amount": 578,
+  "mode": "cash",
+  "category": "Breakfast",
+  "remark": "good",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "647440b6e0f3b8a037b65fe6"
+  },
+  "title": "dklfjdkl",
+  "amount": 1500,
+  "mode": "",
+  "category": "",
+  "remark": "kdjfkld",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "64744196e0f3b8a037b65fe8"
+  },
+  "title": "Petrol",
+  "amount": 110,
+  "mode": "Cash",
+  "category": "miscellaneous",
+  "remark": "For Ubhadiya",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6474436796cba70fb74a4010"
+  },
+  "title": "test",
+  "amount": 233,
+  "mode": "Online",
+  "category": "miscellaneous",
+  "remark": "just checking",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "647443a4fb8b3ad0082617a5"
+  },
+  "title": "test",
+  "amount": 233,
+  "mode": "Online",
+  "category": "miscellaneous",
+  "remark": "just checking",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "647443b896003d3e0680e691"
+  },
+  "date": "29",
+  "title": "test",
+  "amount": 233,
+  "mode": "Online",
+  "category": "miscellaneous",
+  "remark": "just checking",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6474444a96003d3e0680e695"
+  },
+  "date": "May 29 at 11:50 AM",
+  "title": "test",
+  "amount": 233,
+  "mode": "Online",
+  "category": "miscellaneous",
+  "remark": "just checking",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6474efda1762243ba5719113"
+  },
+  "date": "May 30 at 12:02 AM",
+  "title": "FoodWoodz",
+  "amount": 120,
+  "mode": "Online",
+  "category": "Dinner",
+  "remark": "For me and Kinjal",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6476e08656f10abd6b9d0d6f"
+  },
+  "date": "May 31 at 11:22 AM",
+  "title": "dkfjdk",
+  "amount": 5454,
+  "mode": "Online",
+  "category": "Grocery",
+  "remark": "fjdkfjdklfjdklfd",
+  "__v": 0
+}]

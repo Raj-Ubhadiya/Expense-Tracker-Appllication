@@ -1,18 +1,145 @@
-.Sidebar {
+.TitlePage {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: cadetblue;
+}
+
+.titlepagecontainer {
+  width: 50%;
+  height: 50%;
+  color: aqua;
+  /* display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center; */
+  display: grid;
+  place-items: center;
+  border-radius: 5rem;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 50px 100px -20px,
+    rgba(17, 71, 88, 0.678) 0px 30px 60px -30px,
+    rgba(8, 27, 80, 0.35) 0px -2px 6px 0px inset;
+  background-color: rgb(43, 62, 62);
+}
+
+.loginform {
   position: absolute;
+  width: 20rem;
+  height: 25rem;
+  display: grid;
+  place-items: center;
+  border-radius: 2rem;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 50px 100px -20px,
+    rgba(17, 71, 88, 0.678) 0px 30px 60px -30px,
+    rgba(8, 27, 80, 0.35) 0px -2px 6px 0px inset;
+  background-color: rgb(61, 44, 20);
+}
+
+.loginform :focus-visible {
+  background-position: left;
+  /* backface-visibility: hidden; */
+}
+.Loginbutton button {
+  width: 5rem;
+  height: 2rem;
+  color: aqua;
+  background: transparent;
+}
+
+.loginform .Closebtn button {
+  position: absolute;
+  width: 100%;
+  height: 5rem;
+  border: 2px solid red;
+  display: grid;
+  place-items: center;
+  top: 1em;
+  left: 10em;
+  font-size: x-large;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.Signupform {
+  position: fixed;
+  width: 20rem;
+  height: 25rem;
+  display: grid;
+  place-content: center;
+  border-radius: 2rem;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 50px 100px -20px,
+    rgba(17, 71, 88, 0.678) 0px 30px 60px -30px,
+    rgba(8, 27, 80, 0.35) 0px -2px 6px 0px inset;
+  background-color: rgb(61, 44, 20);
+  transition: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform: scale3d(20degree);
+}
+.signupformimputs {
+  display: grid;
+  place-items: center;
+  gap: 0.5rem;
+}
+.Signupform .Closebtn button {
+  position: absolute;
+  width: 100%;
+  height: 5rem;
+  border: 2px solid red;
+  display: grid;
+  place-items: center;
+  top: 1em;
+  left: 10em;
+  font-size: x-large;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+.Loginbutton button {
+  width: 5rem;
+  height: 2rem;
+  color: aqua;
+  background: transparent;
+}
+
+.registrationbutton {
+  /* position: sticky; */
+  /* width: 100%; */
+  height: 5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  /* border: 2px solid red; */
+}
+.loginbutton,
+.signupbutton {
+  /* position: relative; */
+  width: 5rem;
+  height: 2rem;
+  background-color: black;
+  color: cyan;
+  box-shadow: rgba(38, 143, 155, 0.25) 0px 50px 100px -20px,
+    rgba(20, 135, 169, 0.678) 0px 30px 60px -30px,
+    rgba(15, 116, 217, 0.35) 0px -2px 6px 0px inset;
+}
+
+.Sidebar {
+  position: relative;
   width: 100%;
   height: 100%;
   border: 1rem sold rgb(83, 142, 1);
 }
 
 .Sidebar .Navbar {
-  margin: 2rem;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
+  margin: 0.5rem;
+  display: grid;
+  place-content: center;
 }
-
+.TitleLink,
 .homeLink,
 .addExpenseLink,
 .profileLink,
@@ -22,7 +149,8 @@
   place-items: center;
 }
 
-.Navbar .home-img,
+.Navbar .title-img,
+.home-img,
 .addExp-img,
 .profile-img,
 .analyse-img,
@@ -187,11 +315,7 @@
   overflow: auto;
   border: 2px solid rgb(0, 0, 0);
 }
-
-.col-1,
-.col-2,
-.col-3,
-.col-4 {
+.col {
   /* border: 2px solid black; */
   width: 10rem;
   text-align: center;
@@ -440,7 +564,9 @@
   align-items: center;
   gap: 5rem;
   /* border: 2px solid red; */
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
 
 .cards {
@@ -466,20 +592,100 @@
   width: 5rem;
   height: 5em;
 }
-.Analysebutton  {
+.Analysebutton {
   width: 100%;
   height: 3rem;
   display: flex;
   justify-content: flex-end;
   align-items: center;
 }
-.Analysebutton button{
-  width:3rem;
-  height:3rem;
+.Analysebutton button {
+  width: 3rem;
+  height: 3rem;
   margin-right: 2rem;
   border: 2px solid blue;
   background-color: black;
   border-radius: 50%;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   color: aqua;
+}
+
+.transactionContainer {
+  margin: 2rem;
+  height: 90%;
+  border-radius: 15px;
+}
+
+.transactionHeading {
+  /* padding: 0px; */
+  /* height: 2rem; */
+  display: flex;
+  align-items: center;
+}
+.transactionHeading span {
+  font-size: 2.3rem;
+  max-width: 0px;
+  margin-left: 1rem;
+  padding: 0.5rem;
+}
+
+.transactionFilter {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0rem 1rem;
+  margin: 0rem 1rem;
+  border-radius: 2rem;
+}
+
+.transactionFilter ul {
+  display: flex;
+  list-style: none;
+  padding: 0rem 1rem;
+  gap: 2rem;
+}
+
+.transactionList {
+  margin: 0.8rem 1.2rem;
+  border-radius: 1rem;
+  overflow-y: auto;
+  max-height: 30rem;
+}
+
+.transactionRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 0.6rem;
+  padding: 0.7rem;
+  justify-content: space-between;
+  gap: 1rem;
+  /* width: 90%; */
+  height: 1.5rem;
+  font-size: 1.1rem;
+  border-radius: 1rem;
+  text-align: center;
+  overflow: auto;
+  /* border: 2px solid rgb(0, 0, 0); */
+}
+
+.remark {
+  width: 20rem;
+
+  white-space: nowrap;
+}
+
+.transactionList {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+.transactionList::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, and Opera */
+}
+
+.date {
+  width: 20rem;
 }

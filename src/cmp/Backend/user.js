@@ -22,6 +22,7 @@ var userInfo = mongoose.model("userInfo", userInfoSchema);
 var expenseSchema = mongoose.Schema(
   {
     username: String,
+    date : String,
     time: String,
     title: String,
     amount: Number,

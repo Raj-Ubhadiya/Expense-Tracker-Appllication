@@ -59,10 +59,10 @@ function Home() {
         <div className="display-activities">
           {expenseInfo.map((exp) => (
             <div className="row-1" key={exp._id}>
-              <div className="col-1 ">{exp.title}</div>
-              <div className="col-2 ">{exp.amount}</div>
-              <div className="col-3 ">{exp.mode}</div>
-              <div className="col-4 ">{exp.category}</div>
+              <div className="col">{exp.title}</div>
+              <div className="col">{exp.amount}</div>
+              <div className="col">{exp.mode}</div>
+              <div className="col">{exp.category}</div>
             </div>
           ))}
           {/* <div className="row-1">

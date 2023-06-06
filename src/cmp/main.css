@@ -196,6 +196,7 @@
 .col {
   width: 10rem;
   text-align: center;
+  border-radius: 10px;
   /* border: 2px solid black; */
 }
 
@@ -207,10 +208,6 @@
 .col,
 .col,
 .col {
-.col-1,
-.col-2,
-.col-3,
-.col-4 {
   /* border: 2px solid black; */
   width: 10rem;
   text-align: center;
@@ -486,9 +483,6 @@
 .imageofcard img {
   width: 5rem;
   height: 5em;
-.imageofcard img {
-  width: 5rem;
-  height: 5em;
 }
 .Analysebutton {
   width: 100%;
@@ -506,13 +500,49 @@
   border-radius: 50%;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   color: aqua;
-.Analysebutton button {
-  width: 3rem;
-  height: 3rem;
-  margin-right: 2rem;
-  border: 2px solid blue;
-  background-color: black;
-  border-radius: 50%;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  color: aqua;
+}
+
+.transactionContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.transactionHeading {
+  font-size: 2rem;
+  height: 10%;
+}
+.transactionFilter {
+  height: 10%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0rem 2rem;
+  border-radius: 2rem;
+  margin: 1rem;
+}
+.transactionFilter ul {
+  height: 10%;
+  display: flex;
+  flex-direction: row;
+}
+
+.filterOption {
+  display: flex;
+  flex-direction: row;
+}
+.transactionList {
+  font-size: 1.2rem;
+}
+
+.transactionRow div {
+  width: 11rem;
+}
+
+.remark span {
+  width: 18rem;
+}
+.transactionRow {
+  display: flex;
+  flex-direction: row;
 }

@@ -1,3 +1,4 @@
+const string = require("joi/lib/types/string");
 const { default: mongoose } = require("mongoose");
 // User Schema
 //just to check
@@ -12,6 +13,7 @@ var userInfoSchema = mongoose.Schema(
     cashAvailable: String,
     balanceAvailable: String,
     avatarPath: String,
+    email: String,
   },
   {
     collection: "userInfo",

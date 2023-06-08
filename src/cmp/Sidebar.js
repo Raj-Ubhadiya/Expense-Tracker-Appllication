@@ -6,10 +6,6 @@ function Sidebar() {
   return (
     <div className="Sidebar">
       <nav className="Navbar">
-        <div className="TitleLink">
-          <div className="title-img"></div>
-          <Link to="/">Title</Link>
-        </div>
         <div className="homeLink">
           <div className="home-img"></div>
           <Link to="home">Home</Link>

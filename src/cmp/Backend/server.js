@@ -146,11 +146,10 @@ app.post("/loginUser", async (req, res) => {
 });
 
 app.post("/createUser", async (req, res) => {
-  const { username, password, cashAvailable, balanceAvailable, avtarPath } =
-    req.body;
+  const { username, password, email } = req.body;
   var user = await userInfo.findOne({ username });
   if (user) {
-    res.json({ status: "User Exists" });
+    return res.json({ status: "User Exists" });
   }
   var token = jwt.sign({ username }, jwt_secret);
   var hashedpassword = await bcrypt.hash(password, 15);
@@ -158,9 +157,7 @@ app.post("/createUser", async (req, res) => {
     username,
     password: hashedpassword,
     sec_token: token,
-    cashAvailable,
-    balanceAvailable,
-    avtarPath,
+    email,
   });
   res.json({ status: "User Created" });
 });

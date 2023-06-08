@@ -8,13 +8,20 @@ import Analyse from "./cmp/Analyse";
 import Titlepage from "./cmp/Titlepage";
 import { useState } from "react";
 import Transaction from "./cmp/Transaction";
+import MyContext from "./MyContext";
 
 function App() {
-  const [islog, setLog] = useState(false);
+  const [islog, setLog] = useState(true);
+
+  const handleDataFromChild = (data) => {
+    setLog(!islog);
+  };
   return (
     <div className="mainClass">
       {islog ? (
-        <Titlepage />
+        <MyContext.Provider value={handleDataFromChild}>
+          <Titlepage />
+        </MyContext.Provider>
       ) : (
         <Router>
           <div className="sidebar ">
@@ -23,7 +30,7 @@ function App() {
 
           <div className="mainContainer border">
             <Routes>
-              <Route path="/" exact element={<Titlepage />} />
+              {/* <Route path="/" exact element={<Titlepage />} /> */}
               <Route path="/home" exact element={<Home />} />
               <Route path="/addExpense" element={<AddExpense />} />
               <Route path="/transaction" element={<Transaction />} />

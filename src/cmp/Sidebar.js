@@ -6,10 +6,6 @@ function Sidebar() {
   return (
     <div className="Sidebar">
       <nav className="Navbar">
-        <div className="TitleLink">
-          <div className="title-img"></div>
-          <Link to="/">Title</Link>
-        </div>
         <div className="homeLink">
           <div className="home-img"></div>
           <Link to="home">Home</Link>
@@ -18,6 +14,7 @@ function Sidebar() {
           <div className="addExp-img"></div>
           <Link to="addExpense">AddExpense</Link>
         </div>
+
         <div className="transactionLink">
           <div className="transaction-img"></div>
           <Link to="transaction">Transaction</Link>

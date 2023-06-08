@@ -1,6 +1,32 @@
-import React from "react";
+import { set } from "mongoose";
+import React, { useEffect, useState } from "react";
 
 function Profile() {
+  const [username, setUsername] = useState("");
+  const [cashAvailable, setcashAvailable] = useState("");
+  const [balanceAvailable, setbalanceAvailable] = useState("");
+  const [avgExpenseLimit, setavgExpenseLimit] = useState("");
+  function submitHandler(e) {
+    e.preventDefault();
+    fetch("http://localhost:5000/updateUserDemo", {
+      method: "PUT",
+      crossDomain: true,
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+        "Access-Control-Allow-Origin": "*",
+      },
+      body: JSON.stringify({
+        username,
+        cashAvailable,
+        balanceAvailable,
+        avgExpenseLimit,
+      }),
+    }).then((data) => {
+      console.log(data);
+    });
+  }
+
   return (
     <div className="profilepage">
       <div className="profileheader">
@@ -24,13 +50,13 @@ function Profile() {
           </div>
           <div className="imageinput">
             <img className="profileimage" src="download.jpeg" alt="" />
-            <span>
-            /
-            </span>
+            <span>/</span>
           </div>
         </div>
         <div className="submitButton">
-          <button type="submit">Submit</button>
+          <button type="submit" onClick={submitHandler}>
+            Submit
+          </button>
         </div>
       </div>
       <div className="newaddexpensebutton">

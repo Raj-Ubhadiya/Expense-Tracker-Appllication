@@ -203,7 +203,7 @@
   justify-content: center;
   align-items: center;
   width: 40rem;
-  height: 16rem;
+  height: 18rem;
   /* margin-top: -1rem; */
   border-radius: 1rem;
   /* border: 2px solid red; */
@@ -214,6 +214,7 @@
   text-align: left;
   border-radius: 1rem;
   border: 2px solid black;
+  padding: 2rem;
 }
 .footerofleft {
   display: flex;
@@ -306,6 +307,10 @@
   align-items: center;
   margin: 0.2rem;
   padding: 0.7rem;
+  justify-content: space-between;
+  gap: 1rem;
+  /* gap: 13rem; */
+
   /* gap: 13rem; */
 
   width: 90%;

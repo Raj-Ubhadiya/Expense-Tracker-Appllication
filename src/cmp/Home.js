@@ -1,15 +1,29 @@
 import React, { useEffect, useState } from "react";
 import "./main.css";
 import axios from "axios";
-function Home() {
+function Home({ username, sec_token }) {
   const [userData, setUserData] = useState([]);
   const [expenseInfo, setExpense] = useState([]);
 
   useEffect(() => {
-    fetch("http://127.0.0.1:5000/getuserInfoDemo") // API to fetch the data
+    // console.log("username : ", props.username, "sec_token : ", props.sec_token);
+    fetch("http://127.0.0.1:5000/api/getUserInfo", {
+      method: "POST",
+      crossDomain: true,
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+        "Access-Control-Allow-Origin": "*",
+      },
+      body: JSON.stringify({
+        username,
+        sec_token,
+      }),
+    }) // API to fetch the data
       .then((response) => response.json()) //API promise.
       .then((data) => {
-        setUserData(data.data[0]); //Setting data using setData function.
+        console.log("userData : ", data);
+        setUserData(data.data); //Setting data using setData function.
       })
       .catch((error) => console.error(error)); //error handling
 
@@ -65,30 +79,6 @@ function Home() {
               <div className="col">{exp.category}</div>
             </div>
           ))}
-          {/* <div className="row-1">
-            <div className="col-1">Title</div>
-            <div className="col-2">Amount</div>
-            <div className="col-3">Mode</div>
-            <div className="col-4">category</div>
-          </div>
-          <div className="row-2">
-            <div className="col-1">Title</div>
-            <div className="col-2">Amount</div>
-            <div className="col-3">Mode</div>
-            <div className="col-4">category</div>
-          </div>
-          <div className="row-3">
-            <div className="col-1">Title</div>
-            <div className="col-2">Amount</div>
-            <div className="col-3">Mode</div>
-            <div className="col-4">category</div>
-          </div>
-          <div className="row-4">
-            <div className="col-1">Title</div>
-            <div className="col-2">Amount</div>
-            <div className="col-3">Mode</div>
-            <div className="col-4">category</div>
-          </div> */}
         </div>
         <div className="incrementActivity">
           <button className="incrementActivityButton">+</button>

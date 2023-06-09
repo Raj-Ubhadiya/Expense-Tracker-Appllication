@@ -7,10 +7,24 @@ function Home({ username, sec_token }) {
   const [acrosscashlimit, setAcrosscashlimit] = useState([]);
 
   useEffect(() => {
-    fetch("http://127.0.0.1:5000/getuserInfoDemo") // API to fetch the data
+    // console.log("username : ", props.username, "sec_token : ", props.sec_token);
+    fetch("http://127.0.0.1:5000/api/getUserInfo", {
+      method: "POST",
+      crossDomain: true,
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+        "Access-Control-Allow-Origin": "*",
+      },
+      body: JSON.stringify({
+        username,
+        sec_token,
+      }),
+    }) // API to fetch the data
       .then((response) => response.json()) //API promise.
       .then((data) => {
-        setUserData(data.data[0]); //Setting data using setData function.
+        console.log("userData : ", data);
+        setUserData(data.data); //Setting data using setData function.
       })
       .catch((error) => console.error(error)); //error handling
 

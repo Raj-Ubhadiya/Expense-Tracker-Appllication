@@ -17,26 +17,29 @@ function Titlepage() {
   return (
     <>
       <div className="TitlePage">
-       <div className="titlepagecontainer">
-       <div className="title">
-          <h1>SPLIT APPLICATION</h1>
-        </div>
-        <div className="registrationbutton">
-          {/* {setForm ? <Loginform /> : ""} */}
-          <button className="loginbutton" onClick={() => handleLoginform(true)}>
-            login
-          </button>
-          <button
-            className="signupbutton"
-            onClick={() => handleSignupform(true)}
-          >
-            Sign up
-          </button>
-        </div>
-       {loginform ? <Loginform setLoginform={setLoginform} /> : ""}
+        <div className="titlepagecontainer">
+          <div className="title">
+            <h1>SPLIT APPLICATION</h1>
+          </div>
+          <div className="registrationbutton">
+            {/* {setForm ? <Loginform /> : ""} */}
+            <button
+              className="loginbutton"
+              onClick={() => handleLoginform(true)}
+            >
+              login
+            </button>
+            <button
+              className="signupbutton"
+              onClick={() => handleSignupform(true)}
+            >
+              Sign up
+            </button>
+          </div>
+          {loginform ? <Loginform setLoginform={setLoginform} /> : ""}
 
-        {signupform ? <Signup setSignupform={setSignupform} /> : ""}
-       </div>
+          {signupform ? <Signup setSignupform={setSignupform} /> : ""}
+        </div>
       </div>
     </>
   );

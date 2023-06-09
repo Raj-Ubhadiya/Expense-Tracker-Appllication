@@ -4,7 +4,8 @@ import MyContext from "./../MyContext";
 function Loginform({ setLoginform }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [login, setLogin] = useState(false);
+  const [login, setLogin] = useState([]);
+  const [sec_token, setSec_token] = useState("");
 
   const sendDataToParent = useContext(MyContext);
 
@@ -26,10 +27,10 @@ function Loginform({ setLoginform }) {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data.status);
+        console.log(data);
         if (data.status === "Login Success") {
           setLogin(true);
-          sendDataToParent(login);
+          sendDataToParent([login, username, data.data]);
         }
       });
 

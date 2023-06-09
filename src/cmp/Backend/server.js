@@ -35,8 +35,8 @@ require("./user");
 var userInfo = mongoose.model("userInfo");
 
 app.use("/api", async (req, res, next) => {
-  const { username, token } = req.body;
-  var user = await userInfo.findOne({ username, sec_token: token });
+  const { username, sec_token } = req.body;
+  var user = await userInfo.findOne({ username, sec_token });
   if (user) {
     next();
   } else {
@@ -44,8 +44,10 @@ app.use("/api", async (req, res, next) => {
   }
 });
 
-app.get("/api/getUserInfo", async (req, res) => {
-  var user = await userInfo.find({});
+app.post("/api/getUserInfo", async (req, res) => {
+  const { sec_token } = req.body;
+  var user = await userInfo.findOne({ sec_token });
+  console.log("here", user);
   return res.json({ data: user });
 });
 
@@ -134,7 +136,7 @@ app.post("/loginUser", async (req, res) => {
   if (user) {
     if (await bcrypt.compare(password, user.password)) {
       console.log("Login Success");
-      return res.json({ status: "Login Success" });
+      return res.json({ status: "Login Success", data: user.sec_token });
     } else {
       console.log("Invalid Credentials");
       res.json({ status: "Invalid Credentials" });

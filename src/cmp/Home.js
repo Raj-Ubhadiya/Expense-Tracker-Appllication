@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./main.css";
-function Home() {
+import axios from "axios";
+function Home({ usernamr, sec_token }) {
   const [userData, setUserData] = useState([]);
   const [expenseInfo, setExpense] = useState([]);
   const [acrosscashlimit, setAcrosscashlimit] = useState([]);

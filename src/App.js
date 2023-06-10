@@ -26,7 +26,7 @@ function App() {
     <div className="mainClass">
       {islog ? (
         <MyContext.Provider value={handleDataFromChild}>
-          <Titlepage />
+          <Home />
         </MyContext.Provider>
       ) : (
         <Router>

@@ -189,7 +189,7 @@
   background-color: aqua;
 }
 
-.Home-header-title {
+.Home-user-title {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -197,7 +197,7 @@
   /* gap: 0.5rem; */
 }
 
-.leftheader {
+.home-userdeatils {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -208,7 +208,7 @@
   border-radius: 1rem;
   /* border: 2px solid red; */
 }
-.upperofleft {
+.home-username {
   width: 80%;
   height: 60%;
   text-align: left;
@@ -216,7 +216,7 @@
   border: 2px solid black;
   padding: 2rem;
 }
-.footerofleft {
+.home-remainingcash {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -251,16 +251,27 @@
   text-align: right;
 }
 
-.rightheader {
+.home-usermonthlylimittracker {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 15rem;
   height: 15rem;
   margin-left: 8rem;
+  margin: 20px;
   border-radius: 60%;
+  padding: 20px;
   overflow: auto;
-  border: 2px solid rgb(60, 0, 255);
+  border: 5px solid;
+}
+
+.avarageexpenselimit {
+  display: flex;
+  /* flex-wrap: wrap; */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .HomePage .Home-Recent-Activity {

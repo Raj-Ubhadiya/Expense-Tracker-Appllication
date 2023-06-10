@@ -136,7 +136,7 @@ app.post("/loginUser", async (req, res) => {
   if (user) {
     if (await bcrypt.compare(password, user.password)) {
       console.log("Login Success");
-      return res.json({ status: "Login Success", data: user.sec_token });
+      return res.send({ status: "Login Success", data: user.sec_token });
     } else {
       console.log("Invalid Credentials");
       res.json({ status: "Invalid Credentials" });
@@ -209,4 +209,12 @@ app.put("/updateUserDemo", (req, res) => {
       console.error("Failed to update user profile:", err);
       res.status(500).send("An error occurred while updating user profile.");
     });
+});
+
+app.post("/api/getFilteredTransaction", async (req, res) => {
+  const { modeFilter, categoryFilter } = req.body;
+  var filteredTransaction = await expenseInfo.find({
+    category: categoryFilter,
+    mode: modeFilter,
+  });
 });

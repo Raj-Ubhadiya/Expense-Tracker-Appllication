@@ -210,3 +210,11 @@ app.put("/updateUserDemo", (req, res) => {
       res.status(500).send("An error occurred while updating user profile.");
     });
 });
+
+app.post("/api/getFilteredTransaction", async (req, res) => {
+  const { modeFilter, categoryFilter } = req.body;
+  var filteredTransaction = await expenseInfo.find({
+    category: categoryFilter,
+    mode: modeFilter,
+  });
+});

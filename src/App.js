@@ -26,7 +26,7 @@ function App() {
     <div className="mainClass">
       {islog ? (
         <MyContext.Provider value={handleDataFromChild}>
-          <Home />
+          <Titlepage />
         </MyContext.Provider>
       ) : (
         <Router>
@@ -48,7 +48,12 @@ function App() {
                 element={<Home username={username} sec_token={sec_token} />}
               />
               <Route path="/addExpense" element={<AddExpense />} />
-              <Route path="/transaction" element={<Transaction />} />
+              <Route
+                path="/transaction"
+                element={
+                  <Transaction username={username} sec_token={sec_token} />
+                }
+              />
               <Route path="/profile" element={<Profile />} />
               <Route path="/analyse" element={<Analyse />} />
             </Routes>

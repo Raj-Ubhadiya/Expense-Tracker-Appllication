@@ -1,37 +1,26 @@
 import React, { useEffect, useState } from "react";
 import "./main.css";
-import axios from "axios";
-function Home({ username, sec_token }) {
+function Home() {
   const [userData, setUserData] = useState([]);
   const [expenseInfo, setExpense] = useState([]);
-  const [acrosscashlimit, setAcrosscashlimit] = useState([]);
+  // const [tracker, setTracker] = useState([]);
+  const divStyle = {
+    borderColor: userData.balanceAvailable > 2000 ? "red" : "green",
+  };
 
   useEffect(() => {
-    // console.log("username : ", props.username, "sec_token : ", props.sec_token);
-    fetch("http://127.0.0.1:5000/api/getUserInfo", {
-      method: "POST",
-      crossDomain: true,
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-        "Access-Control-Allow-Origin": "*",
-      },
-      body: JSON.stringify({
-        username,
-        sec_token,
-      }),
-    }) // API to fetch the data
+    fetch("http://127.0.0.1:5000/getuserInfoDemo") // API to fetch the data
       .then((response) => response.json()) //API promise.
       .then((data) => {
-        console.log("userData : ", data);
-        setUserData(data.data); //Setting data using setData function.
+        setUserData(data.data[0]); //Setting data using setData function.
       })
       .catch((error) => console.error(error)); //error handling
 
     fetch("http://127.0.0.1:5000/getExpenseDetailDemo") // API to fetch the data
       .then((response) => response.json()) //API promise.
       .then((data) => {
-        setExpense(data.data.slice(0, 5)); //Setting data using setData function.
+        setExpense(data.data.slice(0, 5));
+        // setTracker(data.data.balanceAvailable); //Setting data using setData function.
         console.log(data.data);
       })
       .catch((error) => console.error(error)); //error handling
@@ -51,7 +40,7 @@ function Home({ username, sec_token }) {
               <div className="btn-1">
                 <div className="b1-p1">Remaining cash </div>
                 <div className="b1-p2">
-                  {/* <h3>{ acrosscashlimit ? "${userData.cashAvailable}" :""}</h3> */}
+                  <h3>{`${userData.cashAvailable}`}</h3>
                 </div>
               </div>
               <div className="btn-2">
@@ -62,19 +51,11 @@ function Home({ username, sec_token }) {
               </div>
             </div>
           </div>
-          <div className="home-usermonthlylimittracker">
-            <div className="expensetracker">
-              <div className="usernametrack">{userData.username}</div>
-              <div className="avalablecash">
-                {" "}
-                avareage expense limit
-                <div className="cash">{userData.cashAvailable}</div>
-              </div>
-              ------------------------------
-              <div className="totalmonthlyexpense">
-                {" "}
-                limit
-                <div className="cash">{userData.balanceAvailable}</div>
+          <div className="home-usermonthlylimittracker" style={divStyle}>
+            <div className="avarageexpenselimit">
+              <h3>Avarage expense limit</h3>
+              <div className="monthlylimittracker">
+                {userData.balanceAvailable}
               </div>
             </div>
           </div>

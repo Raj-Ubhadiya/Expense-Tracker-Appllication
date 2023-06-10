@@ -42,6 +42,11 @@ function App() {
                 exact
                 element={<Home username={username} sec_token={sec_token} />}
               />
+              <Route
+                path="/"
+                exact
+                element={<Home username={username} sec_token={sec_token} />}
+              />
               <Route path="/addExpense" element={<AddExpense />} />
               <Route path="/transaction" element={<Transaction />} />
               <Route path="/profile" element={<Profile />} />

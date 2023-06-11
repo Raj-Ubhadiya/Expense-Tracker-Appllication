@@ -36,14 +36,7 @@ function Titlepage() {
               Sign up
             </button>
           </div>
-          {loginform ? (
-            <Loginform
-              setSignupform={setSignupform}
-              setLoginform={setLoginform}
-            />
-          ) : (
-            ""
-          )}
+          {loginform ? <Loginform setLoginform={setLoginform} /> : ""}
 
           {signupform ? <Signup setSignupform={setSignupform} /> : ""}
         </div>

@@ -263,15 +263,36 @@
   border-radius: 60%;
   padding: 20px;
   overflow: auto;
-  border: 5px solid;
+  border: 5px solid rgb(19, 65, 34);
 }
 
-.avarageexpenselimit {
-  display: flex;
-  /* flex-wrap: wrap; */
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+.expensetracker {
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 20px;
+  overflow: hidden;
+}
+.usernametrack {
+  font-size: xx-large;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  margin: 20px;
+  /* border: 2px solid red; */
+}
+
+.avalablecash {
+  font-size: large;
+  font-style: italic;
+  /* display: flex; */
+  /* place-content: center; */
+  /* text-align: center; */
+  /* border: 2px solid rgb(26, 255, 0); */
+}
+.totalmonthlyexpense {
+  font-size: large;
+  font-style: italic;
 }
 
 .HomePage .Home-Recent-Activity {

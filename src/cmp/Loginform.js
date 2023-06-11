@@ -1,7 +1,7 @@
 import React, { useRef, useState, useContext } from "react";
 import MyContext from "./../MyContext";
 
-function Loginform({ setLoginform, setSignupform }) {
+function Loginform({ setLoginform }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [login, setLogin] = useState([]);
@@ -79,14 +79,7 @@ function Loginform({ setLoginform, setSignupform }) {
       <p>
         you have not account?
         <span>
-          <a
-            href="#sign-up"
-            onClick={() => {
-              setSignupform(true);
-            }}
-          >
-            Sign-up
-          </a>
+          <a href="#sign-up">Sign-up</a>
         </span>
       </p>
     </form>

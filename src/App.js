@@ -38,22 +38,17 @@ function App() {
             <Routes>
               {/* <Route path="/" exact element={<Titlepage />} /> */}
               <Route
-                path="/home"
-                exact
-                element={<Home username={username} sec_token={sec_token} />}
-              />
-              <Route
                 path="/"
                 exact
                 element={<Home username={username} sec_token={sec_token} />}
               />
-              <Route path="/addExpense" element={<AddExpense />} />
               <Route
-                path="/transaction"
-                element={
-                  <Transaction username={username} sec_token={sec_token} />
-                }
+                path="/home"
+                exact
+                element={<Home username={username} sec_token={sec_token} />}
               />
+              <Route path="/addExpense" element={<AddExpense />} />
+              <Route path="/transaction" element={<Transaction />} />
               <Route path="/profile" element={<Profile />} />
               <Route path="/analyse" element={<Analyse />} />
             </Routes>

@@ -92,6 +92,9 @@ function Home({ username, sec_token }) {
   const [userData, setUserData] = useState([]);
   const [expenseInfo, setExpense] = useState([]);
   const [acrosscashlimit, setAcrosscashlimit] = useState([]);
+  const divStyle = {
+    borderColor: 3000 > 2000 ? "red" : "green",
+  };
 
   useEffect(() => {
     // console.log("username : ", props.username, "sec_token : ", props.sec_token);
@@ -149,13 +152,13 @@ function Home({ username, sec_token }) {
               </div>
             </div>
           </div>
-          <div className="home-usermonthlylimittracker">
-            <div className="expensetracker">
+          <div className="home-usermonthlylimittracker" style={divStyle}>
+            <div className="expensetracker" >
               <div className="usernametrack">{userData.username}</div>
               <div className="avalablecash">
                 {" "}
                 avareage expense limit
-                <div className="cash">{userData.cashAvailable}</div>
+                <div className="cash">3000</div>
               </div>
               ------------------------------
               <div className="totalmonthlyexpense">

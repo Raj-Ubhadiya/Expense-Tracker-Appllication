@@ -1,5 +1,7 @@
-import React, {useState, useContext } from "react";
+import React, { useState, useContext } from "react";
 import MyContext from "./../MyContext";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function Loginform({ setLoginform, setSignupform }) {
   const [username, setUsername] = useState("");
@@ -12,6 +14,7 @@ function Loginform({ setLoginform, setSignupform }) {
   const handlesubmit = (e) => {
     e.preventDefault();
 
+    // toast("User checking");
     fetch("http://localhost:5000/loginUser", {
       method: "POST",
       crossDomain: true,
@@ -29,63 +32,66 @@ function Loginform({ setLoginform, setSignupform }) {
       .then((data) => {
         console.log(data);
         if (data.status === "Login Success") {
-          setLogin(true);
-          // setSignupform(true);
-          sendDataToParent([login, username, data.data]);
+          toast.success("login successfull!", { autoClose: 2000 });
+          setTimeout(() => {
+            setLogin(true);
+            // setSignupform(true);
+            sendDataToParent([login, username, data.data]);
+          }, 3000);
+        } else {
+          toast.error("Invalid Credential!", { autoClose: 2000 });
         }
       });
-
-    // console.log(email.current.value, password.current.value);
-    // window.location.reload(true);
-    // setSuccess(true);
   };
 
   return (
-    // {success ? ( <Sidebar/>) :
-    <form className="loginform">
-      <div className="Closebtn">
-        <button onClick={() => setLoginform(false)}>*</button>
-      </div>
-      <div className="title">
-        <h2>Login</h2>
-      </div>
+    <>
+      <form className="loginform">
+        <div className="Closebtn">
+          <button onClick={() => setLoginform(false)}>*</button>
+        </div>
+        <div className="title">
+          <h2>Login</h2>
+        </div>
 
-      <div className="email">
-        <label>E-mail</label>
-        <br />
-        <input
-          type="text"
-          onChange={(e) => {
-            setUsername(e.target.value);
-          }}
-          required
-        ></input>
-      </div>
-      <div className="password">
-        <label>Password</label>
-        <br />
-        <input
-          type="password"
-          onChange={(e) => {
-            setPassword(e.target.value);
-          }}
-          required
-        ></input>
-      </div>
-      <div className="Loginbutton">
-        <button type="submit" onClick={(e) => handlesubmit(e)}>
-          login
-        </button>
-      </div>
-      <p>
-        you have not account?
-        <span>
-          <a href="#sign-up" onClick={() => setSignupform(true)}>
-            Sign-up
-          </a>
-        </span>
-      </p>
-    </form>
+        <div className="email">
+          <label>E-mail</label>
+          <br />
+          <input
+            type="email"
+            onChange={(e) => {
+              setUsername(e.target.value);
+            }}
+            required
+          ></input>
+        </div>
+        <div className="password">
+          <label>Password</label>
+          <br />
+          <input
+            type="password"
+            onChange={(e) => {
+              setPassword(e.target.value);
+            }}
+            required
+          ></input>
+        </div>
+        <div className="Loginbutton">
+          <button type="submit" onClick={(e) => handlesubmit(e)}>
+            login
+          </button>
+        </div>
+        <p>
+          you have not account?
+          <span>
+            <a href="#sign-up" onClick={() => setSignupform(true)}>
+              Sign-up
+            </a>
+          </span>
+        </p>
+      </form>
+      <ToastContainer />
+    </>
   );
 }
 

@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
-import { useSearchParams } from "react-router-dom";
-import Loginform from "./Loginform";
 import MyContext from "./../MyContext";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function Signup({ setSignupform }) {
   const [email, setEmail] = useState("");
@@ -30,9 +30,16 @@ function Signup({ setSignupform }) {
       .then((data) => {
         if (data.status === "User Created") {
           // <Loginform />;
-          setCreate(true);
-          sendDataToParent(create);
-          console.log(data);
+          // toast.success("login successfull!", { autoClose: 2000 });
+          // setCreate(true);
+          // sendDataToParent(create);
+          // console.log(data);
+          toast.success("login successfull!", { autoClose: 2000 });
+          setTimeout(() => {
+            setCreate(true);
+            sendDataToParent(create);
+            console.log(data);
+          }, 3000);
         }
       });
   };

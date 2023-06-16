@@ -52,8 +52,9 @@ app.post("/api/getUserInfo", async (req, res) => {
 });
 
 var expenseInfo = mongoose.model("expenseInfo");
-app.get("/api/getExpenseDetail", async (req, res) => {
-  var expense = await expenseInfo.find({});
+app.post("/api/getExpenseDetail", async (req, res) => {
+  const { username } = req.body;
+  var expense = await expenseInfo.find({ username });
   return res.json({ data: expense });
 });
 
@@ -97,26 +98,26 @@ app.get("/getExpenseDetailDemo", async (req, res) => {
 });
 
 app.post("/api/addExpense", async (req, res) => {
-  const { username, time, month, title, amount, mode, category, remark } =
+  const { username, date, month, title, amount, mode, category, remark } =
     req.body;
 
-  const schema = {
-    username: Joi.string().min(4).required(),
-    month: Joi.string().min(2).required(),
-    title: Joi.string().min(4).required(),
-    amount: Joi.number().min(2).required(),
-    mode: Joi.string().min(2).required(),
-    category: Joi.string().min(2).required(),
-  };
-  const joiResult = Joi.valid(req.body, schema);
-  console.log(joiResult);
+  // const schema = {
+  //   username: Joi.string().min(4).required(),
+  //   month: Joi.string().min(2).required(),
+  //   title: Joi.string().min(4).required(),
+  //   amount: Joi.number().min(2).required(),
+  //   mode: Joi.string().min(2).required(),
+  //   category: Joi.string().min(2).required(),
+  // };
+  // const joiResult = Joi.valid(req.body, schema);
+  // console.log(joiResult);
   // if (joiResult.error) {
   //   res.status(400).send(joiResult.error);
   //   return;
   // }
 
   var newExpense = await expenseInfo.create({
-    time,
+    date,
     month,
     username,
     title,
@@ -184,12 +185,25 @@ app.put("/createUserDemo", async (req, res) => {
   res.json({ status: "User Created" });
 });
 
-app.put("/updateUserDemo", (req, res) => {
+app.put("/api/updateUser", (req, res) => {
   const username = req.body.username;
-  const updatedProfile = req.body;
-
+  const { cashAvailable, balanceAvailable, avgExpenseLimit } = req.body;
+  console.log(cashAvailable, balanceAvailable, avgExpenseLimit);
+  // const updatedProfile = {
+  //   cashAvailable: cashAvailable,
+  //   balanceAvailable: balanceAvailable,
+  //   avgExpenseLimit: avgExpenseLimit,
+  // };
+  // console.log("put api ");
   userInfo
-    .findOneAndUpdate({ username }, updatedProfile)
+    .findOneAndUpdate(
+      { username },
+      {
+        cashAvailable: cashAvailable,
+        balanceAvailable: balanceAvailable,
+        avgExpenseLimit: avgExpenseLimit,
+      }
+    )
     .then(() => res.send("User profile updated successfully."))
     .catch((err) => {
       console.error("Failed to update user profile:", err);
@@ -197,19 +211,19 @@ app.put("/updateUserDemo", (req, res) => {
     });
 });
 
-app.put("/updateUserDemo", (req, res) => {
-  const username = req.body.username;
-  const updatedProfile = req.body;
-  console.log(updatedProfile + username);
+// app.put("/updateUserDemo", (req, res) => {
+//   const username = req.body.username;
+//   const updatedProfile = req.body;
+//   console.log(updatedProfile + username);
 
-  userInfo
-    .findOneAndUpdate({ username }, updatedProfile)
-    .then(() => res.send("User profile updated successfully."))
-    .catch((err) => {
-      console.error("Failed to update user profile:", err);
-      res.status(500).send("An error occurred while updating user profile.");
-    });
-});
+//   userInfo
+//     .findOneAndUpdate({ username }, updatedProfile)
+//     .then(() => res.send("User profile updated successfully."))
+//     .catch((err) => {
+//       console.error("Failed to update user profile:", err);
+//       res.status(500).send("An error occurred while updating user profile.");
+//     });
+// });
 
 app.post("/api/getFilteredTransaction", async (req, res) => {
   const { modeFilter, categoryFilter } = req.body;

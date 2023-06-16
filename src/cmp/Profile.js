@@ -1,14 +1,14 @@
 import { set } from "mongoose";
 import React, { useEffect, useState } from "react";
 
-function Profile() {
-  const [username, setUsername] = useState("");
+function Profile({ username, sec_token }) {
+  const [newUsername, setNewUsername] = useState("");
   const [cashAvailable, setcashAvailable] = useState("");
   const [balanceAvailable, setbalanceAvailable] = useState("");
   const [avgExpenseLimit, setavgExpenseLimit] = useState("");
   function submitHandler(e) {
     e.preventDefault();
-    fetch("http://localhost:5000/updateUserDemo", {
+    fetch("http://localhost:5000/api/updateUser", {
       method: "PUT",
       crossDomain: true,
       headers: {
@@ -18,6 +18,7 @@ function Profile() {
       },
       body: JSON.stringify({
         username,
+        sec_token,
         cashAvailable,
         balanceAvailable,
         avgExpenseLimit,
@@ -36,16 +37,40 @@ function Profile() {
         <div className="formupperpart">
           <div className="userinputs">
             <div className="titleinput">
-              <input type="text" placeholder="Title" />
+              <input
+                type="text"
+                placeholder="Username"
+                onChange={(e) => {
+                  setNewUsername(e.target.value);
+                }}
+              />
             </div>
             <div className="dailylimitinput">
-              <input type="text" placeholder="dailyamount" />
+              <input
+                type="text"
+                placeholder="Average Expense Limit"
+                onChange={(e) => {
+                  setavgExpenseLimit(e.target.value);
+                }}
+              />
             </div>
             <div className="Availablecashinput">
-              <input type="text" placeholder="availablecash" />
+              <input
+                type="text"
+                placeholder="Available Cash"
+                onChange={(e) => {
+                  setcashAvailable(e.target.value);
+                }}
+              />
             </div>
             <div className="avilablebalanceinput">
-              <input type="text" placeholder="availablebalance" />
+              <input
+                type="text"
+                placeholder="Available Balance"
+                onChange={(e) => {
+                  setbalanceAvailable(e.target.value);
+                }}
+              />
             </div>
           </div>
           <div className="imageinput">

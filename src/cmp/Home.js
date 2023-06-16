@@ -118,7 +118,19 @@ function Home({ username, sec_token }) {
       })
       .catch((error) => console.error(error)); //error handling
 
-    fetch("http://127.0.0.1:5000/getExpenseDetailDemo") // API to fetch the data
+    fetch("http://127.0.0.1:5000/api/getExpenseDetail", {
+      method: "POST",
+      crossDomain: true,
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+        "Access-Control-Allow-Origin": "*",
+      },
+      body: JSON.stringify({
+        username,
+        sec_token,
+      }),
+    }) // API to fetch the data
       .then((response) => response.json()) //API promise.
       .then((data) => {
         setExpense(data.data.slice(0, 5)); //Setting data using setData function.
@@ -141,7 +153,7 @@ function Home({ username, sec_token }) {
               <div className="btn-1">
                 <div className="b1-p1">Remaining cash </div>
                 <div className="b1-p2">
-                  {/* <h3>{ acrosscashlimit ? "${userData.cashAvailable}" :""}</h3> */}
+                  <h3>{`${userData.cashAvailable}`}</h3>
                 </div>
               </div>
               <div className="btn-2">
@@ -153,7 +165,7 @@ function Home({ username, sec_token }) {
             </div>
           </div>
           <div className="home-usermonthlylimittracker" style={divStyle}>
-            <div className="expensetracker" >
+            <div className="expensetracker">
               <div className="usernametrack">{userData.username}</div>
               <div className="avalablecash">
                 {" "}

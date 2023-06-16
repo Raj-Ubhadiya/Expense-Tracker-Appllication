@@ -1,9 +1,21 @@
 import React, { useEffect, useState } from "react";
 import "./main.css";
-const Transaction = () => {
+const Transaction = ({ username, sec_token }) => {
   const [expenseData, setExpenseData] = useState([]);
   useEffect(() => {
-    fetch("http://127.0.0.1:5000/getExpenseDetailDemo") // API to fetch the data
+    fetch("http://127.0.0.1:5000/api/getExpenseDetail", {
+      method: "POST",
+      crossDomain: true,
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+        "Access-Control-Allow-Origin": "*",
+      },
+      body: JSON.stringify({
+        username,
+        sec_token,
+      }),
+    }) // API to fetch the data
       .then((response) => response.json()) //API promise.
       .then((data) => {
         setExpenseData(data.data); //Setting data using setData function.

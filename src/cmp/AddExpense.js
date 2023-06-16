@@ -1,7 +1,7 @@
 // import func from "joi/lib/types/func";
 import React, { useState } from "react";
 
-function AddExpense() {
+function AddExpense({ username, sec_token }) {
   const [title, setTitle] = useState("");
   const [amount, setAmount] = useState("");
   const [mode, setMode] = useState("");
@@ -30,7 +30,7 @@ function AddExpense() {
 
   function submitHandler(e) {
     e.preventDefault();
-    fetch("http://localhost:5000/addExpenseDemo", {
+    fetch("http://localhost:5000/api/addExpense", {
       method: "POST",
       crossDomain: true,
       headers: {
@@ -45,6 +45,8 @@ function AddExpense() {
         mode,
         category,
         remark,
+        username,
+        sec_token,
       }),
     })
       .then((res) => res.json())

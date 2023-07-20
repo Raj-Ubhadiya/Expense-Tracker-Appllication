@@ -68,36 +68,40 @@ function AddExpense({ username, sec_token }) {
             onChange={(e) => {
               setTitle(e.target.value);
             }}
+            required
           />
         </div>
-        <div className="amountinput">
+        <div className="titleinput">
           <input
-            type="text"
+            required
+            type="number"
             placeholder="Amount"
             onChange={(e) => {
               setAmount(e.target.value);
             }}
           />
         </div>
-        <div className="modeinput">
+        <div className="titleinput">
           <select
             name="Mode"
             id="addExpensemode"
             onChange={(e) => {
               setMode(e.target.value);
             }}
+            required
           >
             <option value="Cash">Cash</option>
             <option value="Online">Online</option>
           </select>
         </div>
-        <div className="categoryinput">
+        <div className="titleinput">
           <select
             name="catagory"
             id="addexpensecatagory"
             onChange={(e) => {
               setCategory(e.target.value);
             }}
+            required
           >
             <option value="Breakfast">Breakfast</option>
             <option value="Lunch">Lunch</option>
@@ -107,13 +111,14 @@ function AddExpense({ username, sec_token }) {
             <option value="miscellaneous">miscellaneous</option>
           </select>
         </div>
-        <div className="remarkinput">
-          <textarea
+        <div className="titleinput">
+          <input
             type="text"
             placeholder="Remark"
             onChange={(e) => {
               setRemark(e.target.value);
             }}
+            required
           />
         </div>
         <div className="submitButton">

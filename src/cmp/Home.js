@@ -1,14 +1,11 @@
 import React, { useEffect, useState } from "react";
 import "./main.css";
 
-
 function Home({ username, sec_token }) {
   const [userData, setUserData] = useState([]);
   const [expenseInfo, setExpense] = useState([]);
   const [acrosscashlimit, setAcrosscashlimit] = useState([]);
-  const divStyle = {
-    borderColor: 3000 > 2000 ? "red" : "green",
-  };
+ 
 
   useEffect(() => {
     // console.log("username : ", props.username, "sec_token : ", props.sec_token);
@@ -53,6 +50,9 @@ function Home({ username, sec_token }) {
       .catch((error) => console.error(error)); //error handling
   }, []);
 
+  // const divStyle = {
+  //   borderColor: {data.data.balanceAvailable} > {userData.limit} ? "red" : "green",
+  // };
   return (
     <div className="HomePage">
       <div className="Home-header">
@@ -112,7 +112,7 @@ function Home({ username, sec_token }) {
         </div>
       </div>
       <div className="incrementActivity">
-        <button >+</button>
+        <button>+</button>
       </div>
     </div>
   );

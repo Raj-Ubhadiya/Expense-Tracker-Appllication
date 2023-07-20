@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { useState } from "react";
 import "./App.css";
 import Sidebar from "./cmp/Sidebar";
 import Home from "./cmp/Home";
@@ -6,7 +7,6 @@ import AddExpense from "./cmp/AddExpense";
 import Profile from "./cmp/Profile";
 import Analyse from "./cmp/Analyse";
 import Titlepage from "./cmp/Titlepage";
-import { useState } from "react";
 import Transaction from "./cmp/Transaction";
 import MyContext from "./MyContext";
 
@@ -34,7 +34,7 @@ function App() {
             <Sidebar />
           </div>
 
-          <div className="mainContainer border">
+          <div className="mainContainer">
             <Routes>
               {/* <Route path="/" exact element={<Titlepage />} /> */}
               <Route

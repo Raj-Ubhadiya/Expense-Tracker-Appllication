@@ -36,34 +36,36 @@ function Profile({ username, sec_token }) {
       <div className="adduserinfoform">
         <div className="formupperpart">
           <div className="userinputs">
-            <div className="titleinput">
+            <div className="profiletitleinput">
               <input
                 type="text"
                 placeholder="Username"
                 onChange={(e) => {
                   setNewUsername(e.target.value);
                 }}
+                required
               />
             </div>
-            <div className="dailylimitinput">
+            <div className="profiletitleinput">
               <input
-                type="text"
+                type="number"
                 placeholder="Average Expense Limit"
                 onChange={(e) => {
                   setavgExpenseLimit(e.target.value);
                 }}
+                required
               />
             </div>
-            <div className="Availablecashinput">
+            <div className="profiletitleinput">
               <input
-                type="text"
+                type="number"
                 placeholder="Available Cash"
                 onChange={(e) => {
                   setcashAvailable(e.target.value);
                 }}
               />
             </div>
-            <div className="avilablebalanceinput">
+            <div className="profiletitleinput">
               <input
                 type="text"
                 placeholder="Available Balance"
